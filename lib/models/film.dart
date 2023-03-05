@@ -2,30 +2,27 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'film.g.dart';
 
-@JsonSerializable(createToJson: false)
+@JsonSerializable()
 class Film {
-  @JsonKey(defaultValue: 'Unknown')
   final String title;
+  @JsonKey(name: 'episode_id')
   final int episodeID;
+  @JsonKey(name: 'opening_crawl')
   final String openingCrawl;
   final String director;
   final String producer;
+  @JsonKey(name: 'release_date')
   final String releaseDate;
 
   final String created;
   final String edited;
   final String url;
 
-  @JsonKey(name: 'characters')
   final List<String> characters;
-  @JsonKey(name: 'planets')
   final List<String> planets;
-  @JsonKey(name: 'starships')
   final List<String> starships;
-  @JsonKey(name: 'vehicles')
   final List<String> vehicles;
-  @JsonKey(name: 'species')
-  final List species;
+  final List<String> species;
 
   Film(
       { required this.title,
