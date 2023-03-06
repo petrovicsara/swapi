@@ -4,14 +4,17 @@ part 'planet.g.dart';
 @JsonSerializable(createToJson: false)
 class Planet{
   final String name;
-  final int rotation_period;
-  final int orbital_period;
-  final int diameter;
+  @JsonKey(name: 'rotation_period')
+  final String rotationPeriod;
+  @JsonKey(name: 'orbital_period')
+  final String orbitalPeriod;
+  final String diameter;
   final String climate;
   final String gravity;
   final String terrain;
-  final int surface_water;
-  final int population;
+  @JsonKey(name: 'surface_water')
+  final String surfaceWater;
+  final String population;
 
   final String created;
   final String edited;
@@ -20,17 +23,17 @@ class Planet{
   @JsonKey(name: 'residents')
   final List<String> residents;
   @JsonKey(name: 'films')
-  final List films;
+  final List<String> films;
 
   Planet({
       required this.name,
-      required this.rotation_period,
-      required this.orbital_period,
+      required this.rotationPeriod,
+      required this.orbitalPeriod,
       required this.diameter,
       required this.climate,
       required this.gravity,
       required this.terrain,
-      required this.surface_water,
+      required this.surfaceWater,
       required this.population,
       required this.created,
       required this.edited,

@@ -5,12 +5,16 @@ part 'person.g.dart';
 @JsonSerializable(createToJson: false)
 class Person{
   final String name;
-  final int height;
-  final int mass;
-  final String hair_color;
-  final String skin_color;
-  final String eye_color;
-  final String birth_year;
+  final String height;
+  final String mass;
+  @JsonKey(name: 'hair_color')
+  final String hairColor;
+  @JsonKey(name: 'skin_color')
+  final String skinColor;
+  @JsonKey(name: 'eye_color')
+  final String eyeColor;
+  @JsonKey(name: 'birth_year')
+  final String birthYear;
   final String gender;
   final String homeworld;
 
@@ -31,10 +35,10 @@ class Person{
       required this.name,
       required this.height,
       required this.mass,
-      required this.hair_color,
-      required this.skin_color,
-      required this.eye_color,
-      required this.birth_year,
+      required this.hairColor,
+      required this.skinColor,
+      required this.eyeColor,
+      required this.birthYear,
       required this.gender,
       required this.homeworld,
       required this.created,

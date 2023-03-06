@@ -8,18 +8,18 @@ part of 'planet.dart';
 
 Planet _$PlanetFromJson(Map<String, dynamic> json) => Planet(
       name: json['name'] as String,
-      rotation_period: json['rotation_period'] as int,
-      orbital_period: json['orbital_period'] as int,
-      diameter: json['diameter'] as int,
+      rotationPeriod: json['rotation_period'] as String,
+      orbitalPeriod: json['orbital_period'] as String,
+      diameter: json['diameter'] as String,
       climate: json['climate'] as String,
       gravity: json['gravity'] as String,
       terrain: json['terrain'] as String,
-      surface_water: json['surface_water'] as int,
-      population: json['population'] as int,
+      surfaceWater: json['surface_water'] as String,
+      population: json['population'] as String,
       created: json['created'] as String,
       edited: json['edited'] as String,
       url: json['url'] as String,
       residents:
           (json['residents'] as List<dynamic>).map((e) => e as String).toList(),
-      films: json['films'] as List<dynamic>,
+      films: (json['films'] as List<dynamic>).map((e) => e as String).toList(),
     );

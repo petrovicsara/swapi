@@ -1,8 +1,10 @@
 import 'package:ending_wars/common/constants.dart';
 import 'package:ending_wars/models/root.dart';
 import 'package:ending_wars/network/base_config.dart';
-import 'package:ending_wars/screens/films_List_screen.dart';
-import 'package:ending_wars/widgets/card_root_resources.dart';
+import 'package:ending_wars/screens/films_list_screen.dart';
+import 'package:ending_wars/screens/people_list_screen.dart';
+import 'package:ending_wars/screens/planets_list_screen.dart';
+import 'package:ending_wars/widgets/card_root_resources_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -46,9 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           CardRootResources(
                               title: 'Films', subtitle: root.films, nextScreen: const FilmsListScreen(), ),
                           CardRootResources(
-                              title: 'People', subtitle: root.people, nextScreen: const FilmsListScreen(),),
+                              title: 'People', subtitle: root.people, nextScreen: const PeopleListScreen(),),
                           CardRootResources(
-                              title: 'Planets', subtitle: root.planets, nextScreen: const FilmsListScreen(),),
+                              title: 'Planets', subtitle: root.planets, nextScreen: const PlanetsListScreen(),),
                           CardRootResources(
                               title: 'Species', subtitle: root.species, nextScreen: const FilmsListScreen(),),
                           CardRootResources(
@@ -60,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   } else {
                     return const CircularProgressIndicator(
-                      color: Constants.darkBlue,
+                      color: Constants.brightYellow,
                     );
                   }
                 },

@@ -8,12 +8,12 @@ part of 'person.dart';
 
 Person _$PersonFromJson(Map<String, dynamic> json) => Person(
       name: json['name'] as String,
-      height: json['height'] as int,
-      mass: json['mass'] as int,
-      hair_color: json['hair_color'] as String,
-      skin_color: json['skin_color'] as String,
-      eye_color: json['eye_color'] as String,
-      birth_year: json['birth_year'] as String,
+      height: json['height'] as String,
+      mass: json['mass'] as String,
+      hairColor: json['hair_color'] as String,
+      skinColor: json['skin_color'] as String,
+      eyeColor: json['eye_color'] as String,
+      birthYear: json['birth_year'] as String,
       gender: json['gender'] as String,
       homeworld: json['homeworld'] as String,
       created: json['created'] as String,

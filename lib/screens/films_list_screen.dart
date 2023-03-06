@@ -25,7 +25,7 @@ class FilmsListScreen extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          FutureBuilder<List<Film>>(
+          FutureBuilder(
               future: baseConfig.getSpecificData('films', Film),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
@@ -60,8 +60,10 @@ class FilmsListScreen extends StatelessWidget {
                 } else if (snapshot.hasError) {
                   return Text('Error: ${snapshot.error}');
                 } else {
-                  return const CircularProgressIndicator(
-                    color: Constants.darkBlue,
+                  return const Center(
+                    child: CircularProgressIndicator(
+                      color: Constants.brightYellow,
+                    ),
                   );
                 }
               })

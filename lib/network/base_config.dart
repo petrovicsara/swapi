@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:ending_wars/models/film.dart';
+import 'package:ending_wars/models/person.dart';
+import 'package:ending_wars/models/planet.dart';
 import 'package:ending_wars/models/root.dart';
 import 'package:http/http.dart' as http;
 
@@ -19,11 +21,19 @@ class BaseConfig {
     }
   }
 
-  Future<List<Film>> getSpecificData(String dataName, dynamic type) async {
+  Future<List<dynamic>> getSpecificData(String dataName, dynamic type) async {
     http.Response response = await http.get(Uri.parse(endpoint + dataName));
 
     if (response.statusCode == 200) {
       var jsonData = jsonDecode(response.body)['results'] as List<dynamic>;
+      switch(type) {
+        case Film:
+          return jsonData.map((filmJson) => Film.fromJson(filmJson)).toList();
+        case Person:
+          return jsonData.map((personJson) => Person.fromJson(personJson)).toList();
+        case Planet:
+          return jsonData.map((personJson) => Planet.fromJson(personJson)).toList();
+      }
       return jsonData.map((filmJson) => Film.fromJson(filmJson)).toList();
     } else {
       throw Exception(
