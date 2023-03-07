@@ -4,7 +4,8 @@ part 'film.g.dart';
 
 @JsonSerializable()
 class Film {
-  final String title;
+  @JsonKey(name: 'title')
+  final String name;
   @JsonKey(name: 'episode_id')
   final int episodeID;
   @JsonKey(name: 'opening_crawl')
@@ -25,7 +26,7 @@ class Film {
   final List<String> species;
 
   Film(
-      { required this.title,
+      { required this.name,
         required this.episodeID,
         required this.openingCrawl,
         required this.director,

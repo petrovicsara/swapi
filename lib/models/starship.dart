@@ -30,7 +30,7 @@ class Starship{
   final String url;
 
   @JsonKey(name: 'films')
-  final List films;
+  final List<String> films;
 
   Starship({
     required this.name,

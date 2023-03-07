@@ -24,5 +24,5 @@ Starship _$StarshipFromJson(Map<String, dynamic> json) => Starship(
       created: json['created'] as String,
       edited: json['edited'] as String,
       url: json['url'] as String,
-      films: json['films'] as List<dynamic>,
+      films: (json['films'] as List<dynamic>).map((e) => e as String).toList(),
     );

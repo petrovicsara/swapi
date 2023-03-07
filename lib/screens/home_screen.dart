@@ -1,9 +1,5 @@
 import 'package:ending_wars/common/constants.dart';
-import 'package:ending_wars/models/root.dart';
 import 'package:ending_wars/network/base_config.dart';
-import 'package:ending_wars/screens/films_list_screen.dart';
-import 'package:ending_wars/screens/people_list_screen.dart';
-import 'package:ending_wars/screens/planets_list_screen.dart';
 import 'package:ending_wars/widgets/card_root_resources_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Root root;
+    Map<String, dynamic> root;
 
     return Scaffold(
       body: Padding(
@@ -35,29 +31,21 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 30,
               ),
-              FutureBuilder<Root>(
+              FutureBuilder(
                 future: baseConfig.getData(),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     root = snapshot.data!;
                     return Expanded(
-                      child: ListView(
+                      child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         shrinkWrap: true,
-                        children: [
-                          CardRootResources(
-                              title: 'Films', subtitle: root.films, nextScreen: const FilmsListScreen(), ),
-                          CardRootResources(
-                              title: 'People', subtitle: root.people, nextScreen: const PeopleListScreen(),),
-                          CardRootResources(
-                              title: 'Planets', subtitle: root.planets, nextScreen: const PlanetsListScreen(),),
-                          CardRootResources(
-                              title: 'Species', subtitle: root.species, nextScreen: const FilmsListScreen(),),
-                          CardRootResources(
-                              title: 'Starships', subtitle: root.starships, nextScreen: const FilmsListScreen(),),
-                          CardRootResources(
-                              title: 'Vehicles', subtitle: root.vehicles, nextScreen: const FilmsListScreen(),),
-                        ],
+                        itemCount: root.length,
+                        itemBuilder: (context, index) {
+                          final key = root.keys.elementAt(index);
+                          final value = root[key];
+                          return CardRootResources(resourceNameType: key, resourceStringUrl: value!);
+                        },
                       ),
                     );
                   } else {

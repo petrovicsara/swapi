@@ -26,7 +26,7 @@ class Vehicle{
   final String url;
 
   @JsonKey(name: 'films')
-  final List films;
+  final List<String> films;
 
   Vehicle({
     required this.name,

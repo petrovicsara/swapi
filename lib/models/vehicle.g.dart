@@ -22,5 +22,5 @@ Vehicle _$VehicleFromJson(Map<String, dynamic> json) => Vehicle(
       created: json['created'] as String,
       edited: json['edited'] as String,
       url: json['url'] as String,
-      films: json['films'] as List<dynamic>,
+      films: (json['films'] as List<dynamic>).map((e) => e as String).toList(),
     );

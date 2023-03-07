@@ -1,19 +1,20 @@
 import 'package:ending_wars/common/constants.dart';
-import 'package:ending_wars/models/person.dart';
+import 'package:ending_wars/models/vehicle.dart';
 import 'package:ending_wars/widgets/nested_data_widget.dart';
-import 'package:ending_wars/widgets/person_details_widget.dart';
+import 'package:ending_wars/widgets/vehicle_details_widget.dart';
 import 'package:flutter/material.dart';
 
-class PersonScreen extends StatelessWidget {
-  final int personID;
-  final Person person;
-  const PersonScreen({Key? key, required this.personID, required this.person}) : super(key: key);
+class VehicleScreen extends StatelessWidget {
+  final int vehicleID;
+  final Vehicle vehicle;
+  const VehicleScreen({Key? key, required this.vehicleID, required this.vehicle})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(person.name),
+        title: Text(vehicle.name),
         backgroundColor: Constants.brightYellow,
       ),
       body: SafeArea(
@@ -34,24 +35,22 @@ class PersonScreen extends StatelessWidget {
                     ),
                     child: Container(
                       padding: const EdgeInsets.all(16),
-                      child: PersonDetails(person: person,),
+                      child: VehicleDetails(
+                        vehicle: vehicle,
+                      ),
                     ),
                   ),
                 ),
                 const SizedBox(height: 20,),
                 const Text(
-                  'Starships',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Constants.lightGray),
-                ),
-                const SizedBox(height: 20,),
-                NestedData(resourceName: 'starships', resourceEndpoints: person.starships,),
-                const SizedBox(height: 20,),
-                const Text(
                   'Films',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Constants.lightGray),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Constants.lightGray),
                 ),
                 const SizedBox(height: 20,),
-                NestedData(resourceName: 'films', resourceEndpoints: person.films),
+                NestedData(resourceName: 'films', resourceEndpoints: vehicle.films),
               ],
             ),
           ),
