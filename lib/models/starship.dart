@@ -6,16 +6,22 @@ class Starship{
   final String name;
   final String model;
   final String manufacturer;
-  final int cost_in_credits;
-  final int length;
-  final int max_atmosphering_speed;
+  @JsonKey(name: 'cost_in_credits')
+  final String costInCredits;
+  final String length;
+  @JsonKey(name: 'max_atmosphering_speed')
+  final String maxAtmospheringSpeed;
   final String crew;
-  final int passengers;
-  final int cargo_capacity;
+  final String passengers;
+  @JsonKey(name: 'cargo_capacity')
+  final String cargoCapacity;
   final String consumables;
-  final double hyperdrive_rating;
-  final int MGLT;
-  final String starship_class;
+  @JsonKey(name: 'hyperdrive_rating')
+  final String hyperdriveRating;
+  @JsonKey(name: 'MGLT')
+  final String mglt;
+  @JsonKey(name: 'starship_class')
+  final String starshipClass;
   final List pilots;
 
 
@@ -30,16 +36,16 @@ class Starship{
     required this.name,
     required this.model,
     required this.manufacturer,
-    required this.cost_in_credits,
+    required this.costInCredits,
     required this.length,
-    required this.max_atmosphering_speed,
+    required this.maxAtmospheringSpeed,
     required this.crew,
     required this.passengers,
-    required this.cargo_capacity,
+    required this.cargoCapacity,
     required this.consumables,
-    required this.hyperdrive_rating,
-    required this.MGLT,
-    required this.starship_class,
+    required this.hyperdriveRating,
+    required this.mglt,
+    required this.starshipClass,
     required this.pilots,
     required this.created,
     required this.edited,

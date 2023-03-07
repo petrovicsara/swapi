@@ -6,11 +6,16 @@ class Species{
   final String name;
   final String classification;
   final String designation;
-  final int average_height;
-  final String skin_colors;
-  final String hair_colors;
-  final String eye_colors;
-  final int average_lifespan;
+  @JsonKey(name: 'average_height')
+  final String averageHeight;
+  @JsonKey(name: 'skin_colors')
+  final String skinColors;
+  @JsonKey(name: 'hair_colors')
+  final String hairColors;
+  @JsonKey(name: 'eye_colors')
+  final String eyeColors;
+  @JsonKey(name: 'average_lifespan')
+  final String averageLifespan;
   final String homeworld;
   final String language;
 
@@ -27,11 +32,11 @@ class Species{
     required this.name,
     required this.classification,
     required this.designation,
-    required this.average_height,
-    required this.skin_colors,
-    required this.hair_colors,
-    required this.eye_colors,
-    required this.average_lifespan,
+    required this.averageHeight,
+    required this.skinColors,
+    required this.hairColors,
+    required this.eyeColors,
+    required this.averageLifespan,
     required this.homeworld,
     required this.language,
     required this.created,

@@ -6,14 +6,18 @@ class Vehicle{
   final String name;
   final String model;
   final String manufacturer;
-  final int cost_in_credits;
-  final int length;
-  final int max_atmosphering_speed;
+  @JsonKey(name: 'cost_in_credits')
+  final String costInCredits;
+  final String length;
+  @JsonKey(name: 'max_atmosphering_speed')
+  final String maxAtmospheringSpeed;
   final String crew;
-  final int passengers;
-  final int cargo_capacity;
+  final String passengers;
+  @JsonKey(name: 'cargo_capacity')
+  final String cargoCapacity;
   final String consumables;
-  final double vehicle_class;
+  @JsonKey(name: 'vehicle_class')
+  final String vehicleClass;
   final List pilots;
 
 
@@ -28,14 +32,14 @@ class Vehicle{
     required this.name,
     required this.model,
     required this.manufacturer,
-    required this.cost_in_credits,
+    required this.costInCredits,
     required this.length,
-    required this.max_atmosphering_speed,
+    required this.maxAtmospheringSpeed,
     required this.crew,
     required this.passengers,
-    required this.cargo_capacity,
+    required this.cargoCapacity,
     required this.consumables,
-    required this.vehicle_class,
+    required this.vehicleClass,
     required this.pilots,
     required this.created,
     required this.edited,
