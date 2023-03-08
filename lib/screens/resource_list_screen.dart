@@ -1,11 +1,6 @@
 import 'package:ending_wars/common/constants.dart';
+import 'package:ending_wars/common/util.dart';
 import 'package:ending_wars/network/base_config.dart';
-import 'package:ending_wars/screens/film_screen.dart';
-import 'package:ending_wars/screens/person_screen.dart';
-import 'package:ending_wars/screens/planet_screen.dart';
-import 'package:ending_wars/screens/species_screen.dart';
-import 'package:ending_wars/screens/starship_screen.dart';
-import 'package:ending_wars/screens/vehicle_screen.dart';
 import 'package:flutter/material.dart';
 
 class ResourceListScreen extends StatelessWidget {
@@ -21,7 +16,7 @@ class ResourceListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Constants.brightYellow,
-        title: Text(Constants.capitalize(resourceNameType)),
+        title: Text(capitalize(resourceNameType)),
       ),
       body: SafeArea(
         child: Padding(
@@ -32,7 +27,7 @@ class ResourceListScreen extends StatelessWidget {
                 height: 50,
               ),
               FutureBuilder(
-                  future: baseConfig.getSpecificData(resourceNameType),
+                  future: baseConfig.getSpecificDataList(resourceNameType),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       resourceList = snapshot.data!;
@@ -52,44 +47,8 @@ class ResourceListScreen extends StatelessWidget {
                                 color: Constants.lightGray,
                                 child: InkWell(
                                   onTap: () {
-                                    dynamic nextScreen;
-                                    switch (resourceNameType) {
-                                      case 'people':
-                                        nextScreen = PersonScreen(
-                                          personID: index + 1,
-                                          person: resourceList[index],
-                                        );
-                                        break;
-                                      case 'planets':
-                                        nextScreen = PlanetScreen(
-                                            planetID: index + 1,
-                                            planet: resourceList[index]);
-                                        break;
-                                      case 'films':
-                                        nextScreen = FilmScreen(
-                                            filmID: index + 1,
-                                            film: resourceList[index]);
-                                        break;
-                                      case 'species':
-                                        nextScreen = SpeciesScreen(
-                                            speciesID: index + 1,
-                                            species: resourceList[index]);
-                                        break;
-                                      case 'vehicles':
-                                        nextScreen = VehicleScreen(
-                                            vehicleID: index + 1,
-                                            vehicle: resourceList[index]);
-                                        break;
-                                      case 'starships':
-                                        nextScreen = StarshipScreen(
-                                            starshipID: index + 1,
-                                            starship: resourceList[index]);
-                                        break;
-                                    }
-
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) => nextScreen));
+                                    dynamic nextScreen = getResourceScreen(resourceNameType, resourceList[index]);
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => nextScreen));
                                   },
                                   child: ListTile(
                                     title: Text(

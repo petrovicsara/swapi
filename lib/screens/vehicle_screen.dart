@@ -5,9 +5,8 @@ import 'package:ending_wars/widgets/vehicle_details_widget.dart';
 import 'package:flutter/material.dart';
 
 class VehicleScreen extends StatelessWidget {
-  final int vehicleID;
   final Vehicle vehicle;
-  const VehicleScreen({Key? key, required this.vehicleID, required this.vehicle})
+  const VehicleScreen({Key? key, required this.vehicle})
       : super(key: key);
 
   @override

@@ -31,8 +31,4 @@ class Constants {
 
     return MaterialColor(color.value, shades);
   }
-
-  static String capitalize(String word) {
-    return "${word[0].toUpperCase()}${word.substring(1).toLowerCase()}";
-  }
 }

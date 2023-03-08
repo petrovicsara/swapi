@@ -5,9 +5,8 @@ import 'package:ending_wars/widgets/starship_details_widget.dart';
 import 'package:flutter/material.dart';
 
 class StarshipScreen extends StatelessWidget {
-  final int starshipID;
   final Starship starship;
-  const StarshipScreen({Key? key, required this.starshipID, required this.starship})
+  const StarshipScreen({Key? key, required this.starship})
       : super(key: key);
 
   @override

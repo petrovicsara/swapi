@@ -28,20 +28,3 @@ Film _$FilmFromJson(Map<String, dynamic> json) => Film(
       species:
           (json['species'] as List<dynamic>).map((e) => e as String).toList(),
     );
-
-Map<String, dynamic> _$FilmToJson(Film instance) => <String, dynamic>{
-      'title': instance.name,
-      'episode_id': instance.episodeID,
-      'opening_crawl': instance.openingCrawl,
-      'director': instance.director,
-      'producer': instance.producer,
-      'release_date': instance.releaseDate,
-      'created': instance.created,
-      'edited': instance.edited,
-      'url': instance.url,
-      'characters': instance.characters,
-      'planets': instance.planets,
-      'starships': instance.starships,
-      'vehicles': instance.vehicles,
-      'species': instance.species,
-    };

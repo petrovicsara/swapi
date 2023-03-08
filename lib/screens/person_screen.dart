@@ -5,9 +5,8 @@ import 'package:ending_wars/widgets/person_details_widget.dart';
 import 'package:flutter/material.dart';
 
 class PersonScreen extends StatelessWidget {
-  final int personID;
   final Person person;
-  const PersonScreen({Key? key, required this.personID, required this.person}) : super(key: key);
+  const PersonScreen({Key? key, required this.person}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -5,9 +5,8 @@ import 'package:ending_wars/widgets/nested_data_widget.dart';
 import 'package:flutter/material.dart';
 
 class FilmScreen extends StatelessWidget {
-  final int filmID;
   final Film film;
-  const FilmScreen({Key? key, required this.filmID, required this.film})
+  const FilmScreen({Key? key, required this.film})
       : super(key: key);
 
   @override

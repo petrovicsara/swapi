@@ -5,9 +5,8 @@ import 'package:ending_wars/widgets/planet_details_widget.dart';
 import 'package:flutter/material.dart';
 
 class PlanetScreen extends StatelessWidget {
-  final int planetID;
   final Planet planet;
-  const PlanetScreen({Key? key, required this.planetID, required this.planet}) : super(key: key);
+  const PlanetScreen({Key? key, required this.planet}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -5,9 +5,8 @@ import 'package:ending_wars/widgets/species_details_widget.dart';
 import 'package:flutter/material.dart';
 
 class SpeciesScreen extends StatelessWidget {
-  final int speciesID;
   final Species species;
-  const SpeciesScreen({Key? key, required this.speciesID, required this.species})
+  const SpeciesScreen({Key? key, required this.species})
       : super(key: key);
 
   @override

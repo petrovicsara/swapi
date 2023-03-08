@@ -1,4 +1,5 @@
 import 'package:ending_wars/common/constants.dart';
+import 'package:ending_wars/common/util.dart';
 import 'package:ending_wars/screens/resource_list_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class CardRootResources extends StatelessWidget {
         },
         child: ListTile(
           title: Text(
-            Constants.capitalize(resourceNameType),
+            capitalize(resourceNameType),
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           subtitle: Text(resourceStringUrl),
